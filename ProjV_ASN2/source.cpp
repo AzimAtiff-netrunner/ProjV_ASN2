@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <Windows.h>
 
 using namespace std;
 
@@ -20,10 +21,14 @@ int main() {
 	string line;
 	while (getline(inf, line)) {
 		STUDENT_DATA student;
+		if (IsDebuggerPresent()) {
+			cout << line << endl;
+		}
 		students.push_back(student);
+		
 	}
 
 
 	inf.close();
-	return 1;
+	return 0;
 }
