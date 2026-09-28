@@ -11,7 +11,11 @@ struct STUDENT_DATA {
 	char lastName[20];
 };
 
+
 int main() {
+#ifndef PreRelease
+	cout << "In PreRelease" << endl;
+#endif
 	ifstream inf("StudentData.txt");
 	if (!inf.is_open()) {
 		cerr << "Error opening StudentData.txt file for reading." << endl;
